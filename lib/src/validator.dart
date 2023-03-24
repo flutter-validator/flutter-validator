@@ -84,6 +84,24 @@ class Validator {
     );
   }
 
+  /// Returns a Validator that accepts a value containing at least one
+  /// whitespace character.
+  ///
+  /// Whitespace characters are as defined in:
+  /// https://en.wikipedia.org/wiki/Whitespace_character
+  Validator hasWhitespace({
+    String message = "Validator.hasWhitespace",
+  }) {
+    var regExp = RegExp(
+      r"[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]",
+      unicode: true,
+    );
+
+    return add(
+      (value) => regExp.hasMatch(value ?? "") ? null : message,
+    );
+  }
+
   /// Returns a Validator that accepts a value that contains no whitespace
   /// characters.
   ///
