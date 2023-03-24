@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'forms/contains_form.dart';
 import 'forms/equals_form.dart';
 import 'forms/has_no_whitespace_form.dart';
+import 'forms/has_whitespace_form.dart';
 import 'forms/is_alphabetical_form.dart';
 import 'forms/is_alphanumerical_form.dart';
 import 'forms/is_lower_case_form.dart';
@@ -76,12 +77,21 @@ class MyApp extends StatelessWidget {
               children: const [IsNotEmptyForm()],
             ),
             ExpansionTile(
-              title: const Text("Validator.hasNoWhitespace()"),
+              title: const Text("Validator.hasWhitespace()"),
               subtitle: const Text(
                 "For when you want to make sure a value has no whitespaces, as defined in https://en.wikipedia.org/wiki/Whitespace_character",
               ),
               backgroundColor: color2,
               collapsedBackgroundColor: color2,
+              children: const [HasWhitespaceForm()],
+            ),
+            ExpansionTile(
+              title: const Text("Validator.hasNoWhitespace()"),
+              subtitle: const Text(
+                "For when you want to make sure a value has no whitespaces, as defined in https://en.wikipedia.org/wiki/Whitespace_character",
+              ),
+              backgroundColor: color1,
+              collapsedBackgroundColor: color1,
               children: const [HasNoWhitespaceForm()],
             ),
             ExpansionTile(
@@ -89,8 +99,8 @@ class MyApp extends StatelessWidget {
               subtitle: const Text(
                 "For when you want to make sure a value has at least N characters.",
               ),
-              backgroundColor: color1,
-              collapsedBackgroundColor: color1,
+              backgroundColor: color2,
+              collapsedBackgroundColor: color2,
               children: const [MinLengthForm()],
             ),
             ExpansionTile(
@@ -98,8 +108,8 @@ class MyApp extends StatelessWidget {
               subtitle: const Text(
                 "For when you want to make sure a value has at most N characters.",
               ),
-              backgroundColor: color2,
-              collapsedBackgroundColor: color2,
+              backgroundColor: color1,
+              collapsedBackgroundColor: color1,
               children: const [MaxLengthForm()],
             ),
             ExpansionTile(
@@ -107,8 +117,8 @@ class MyApp extends StatelessWidget {
               subtitle: const Text(
                 "For when you want to make sure a value has at most N characters.",
               ),
-              backgroundColor: color1,
-              collapsedBackgroundColor: color1,
+              backgroundColor: color2,
+              collapsedBackgroundColor: color2,
               children: const [IsUpperCaseForm()],
             ),
             ExpansionTile(
@@ -116,8 +126,8 @@ class MyApp extends StatelessWidget {
               subtitle: const Text(
                 "For when you want to make sure a value has at most N characters.",
               ),
-              backgroundColor: color2,
-              collapsedBackgroundColor: color2,
+              backgroundColor: color1,
+              collapsedBackgroundColor: color1,
               children: const [IsLowerCaseForm()],
             ),
             ExpansionTile(
@@ -125,8 +135,8 @@ class MyApp extends StatelessWidget {
               subtitle: const Text(
                 "For when you want to make sure a value contains only numbers.",
               ),
-              backgroundColor: color1,
-              collapsedBackgroundColor: color1,
+              backgroundColor: color2,
+              collapsedBackgroundColor: color2,
               children: const [IsNumericalForm()],
             ),
             ExpansionTile(
@@ -134,8 +144,8 @@ class MyApp extends StatelessWidget {
               subtitle: const Text(
                 "For when you want to make sure a value contains only letters.",
               ),
-              backgroundColor: color2,
-              collapsedBackgroundColor: color2,
+              backgroundColor: color1,
+              collapsedBackgroundColor: color1,
               children: const [IsAlphabeticalForm()],
             ),
             ExpansionTile(
@@ -143,8 +153,8 @@ class MyApp extends StatelessWidget {
               subtitle: const Text(
                 "For when you want to make sure a value contains only numbers or letters.",
               ),
-              backgroundColor: color1,
-              collapsedBackgroundColor: color1,
+              backgroundColor: color2,
+              collapsedBackgroundColor: color2,
               children: const [IsAlphanumericalForm()],
             ),
           ],
